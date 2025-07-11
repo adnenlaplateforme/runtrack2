@@ -1,7 +1,7 @@
 <?php
 function reverseString($text)
 {
-    $tab = str_split($text);
+    $tab = isset($text) ? str_split($text) : '';
     $tabStrReversed = array_reverse($tab);
     foreach ($tabStrReversed as $key => $value) {
         echo $value;
