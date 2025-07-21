@@ -22,9 +22,8 @@ function isNombrePair($nombre)
     $nombre = intval($nombre);
     if ($nombre % 2 != 0) {
         return false;
-    } else {
-        return true;
     }
+    return true;
 }
 
 if (isset($_GET["nombre"]) && isNombrePair($_GET["nombre"])) {
