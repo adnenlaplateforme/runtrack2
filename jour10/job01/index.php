@@ -1,26 +1,8 @@
 <?php
-function connectDatabaseWithServer()
-{
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "jour09";
-
-    // connect the database with server
-
-    $conn = new mysqli($servername, $username, $password, $dbname);
-
-    if ($conn->connect_errno) {
-        echo "Failed to connect to MySQL :" . $conn->connect_errno;
-        exit();
-    }
-    return $conn;
-}
-//$sql = "SELECT JSON_ARRAYAGG(JSON_OBJECT('id', id, 'nom', nom, 'prenom', prenom, 'email', email)) AS user_json FROM utilisateurs";
-
+include '../connectDatabaseWithServer.php';
 function selectEtudiants()
 {
-    $conn = connectDatabaseWithServer();
+    $conn = connectDatabaseWithServer("localhost", "root", "", "jour09");
     $sql = "SELECT id, prenom, nom, sexe, naissance, email FROM etudiants";
     $result = $conn->query($sql);
     if ($result) {
