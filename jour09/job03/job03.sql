@@ -1,0 +1,1 @@
+SELECT id, prenom, nom, naissance, email FROM `etudiants`;

@@ -1,0 +1,1 @@
+SELECT prenom, nom, naissance FROM `etudiants` WHERE YEAR(naissance) >= 1998 && YEAR(naissance) <= 2018;
