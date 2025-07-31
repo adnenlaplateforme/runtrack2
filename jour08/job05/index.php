@@ -20,9 +20,8 @@ if (!empty($_GET['button'])) {
         }
         $_SESSION['tour'] = $_SESSION['tour'] == 1 ? 2 : 1;
     }
-    if (draw($_SESSION['grille'])) {
+    if (draw($_SESSION['grille']) && !victoire($_SESSION['grille'], 1) && !victoire($_SESSION['grille'], 2)) {
         echo "<h2>Match nul !</h2>";
-        session_destroy();
     }
 }
 if (isset($_GET['reset'])) {
