@@ -1,1 +1,1 @@
-SELECT SUM(capacite) FROM `salles`;
+SELECT SUM(capacite) AS capacite_totale FROM `salles`;
